@@ -1,0 +1,30 @@
+/* index.css */
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  /* Palette Colori Moderna */
+  --bg-app: #f1f5f9;      /* Slate 100 */
+  --text-main: #0f172a;   /* Slate 900 */
+  --text-muted: #64748b;  /* Slate 500 */
+  --primary: #6366f1;     /* Indigo 500 */
+  --primary-glow: rgba(99, 102, 241, 0.4);
+  --danger: #ef4444;
+  --success: #10b981;
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}

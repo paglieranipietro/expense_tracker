@@ -1,0 +1,268 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #6366f1;
+  --bg-color: #f1f5f9;
+  --text-primary: #1e293b;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+}
+
+.app-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 10px 0;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
+
+.btn-icon {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  transition: all 0.2s;
+}
+
+.btn-icon:hover {
+  background: #fee2e2;
+  color: #ef4444;
+  border-color: #fee2e2;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 24px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid white;
+}
+
+.balance-card {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: white;
+}
+
+.balance-label {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.balance-card h1 {
+  margin: 10px 0;
+  font-size: 2.5rem;
+}
+
+/* Filter Buttons */
+.filter-group {
+  display: flex;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 12px;
+  gap: 4px;
+}
+
+.filter-btn {
+  border: none;
+  background: transparent;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #64748b;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.filter-btn.active {
+  background: white;
+  color: var(--primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-weight: 600;
+}
+
+/* Form Rapido Dashboard */
+.add-form {
+  display: flex;
+  flex-direction: column;
+  /* Elementi uno sotto l'altro */
+  gap: 12px;
+  margin-top: 1.5rem;
+  background: white;
+  padding: 16px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05);
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.form-row.details-row {
+  align-items: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Stili specifici input */
+.add-form input,
+.input-select {
+  padding-left: 16px;
+  background: #f8fafc;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  height: 50px;
+  /* Altezza uniforme */
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  /* Importante per width */
+  width: 100%;
+}
+
+.add-form input:focus,
+.input-select:focus {
+  background: white;
+  border-color: var(--primary);
+  outline: none;
+}
+
+.add-form input.input-desc {
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  min-width: 50px;
+  /* Non schiacciarsi */
+  height: 50px;
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+/* List */
+.transactions-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #f1f5f9;
+  transition: transform 0.2s;
+}
+
+.transaction-item:hover {
+  transform: translateX(3px);
+}
+
+.t-icon {
+  width: 44px;
+  height: 44px;
+  background: #f1f5f9;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 14px;
+}
+
+.t-desc {
+  font-weight: 600;
+  display: block;
+}
+
+.t-date {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.t-amount {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.full-width-chart {
+  grid-column: 1 / -1;
+  margin-top: 20px;
+}
+
+.stats-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 800px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row.details-row {
+    flex-wrap: wrap;
+  }
+}
