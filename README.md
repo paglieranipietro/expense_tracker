@@ -2,10 +2,8 @@
 
 **Gestionale Spese** è un'applicazione web moderna e reattiva per il tracciamento delle finanze personali. Sviluppata con **React** e **PocketBase**, offre un'esperienza utente fluida con design "premium", visualizzazione dati avanzata e gestione intuitiva delle transazioni.
 
-![Dashboard Preview](<img width="1313" height="722" alt="image" src="https://github.com/user-attachments/assets/808ddfc1-5e50-4356-8700-f4040e082baa" />
-)
-![Graphic Preview](<img width="1264" height="426" alt="image" src="https://github.com/user-attachments/assets/0dbab0f8-387d-4456-8be8-498b12bf7403" />
-)
+![Dashboard Preview](<img width="1313" height="722" alt="image" src="https://github.com/user-attachments/assets/808ddfc1-5e50-4356-8700-f4040e082baa" />)
+![Graphic Preview](<img width="1264" height="426" alt="image" src="https://github.com/user-attachments/assets/0dbab0f8-387d-4456-8be8-498b12bf7403" />)
 
 ## ✨ Funzionalità Principali
 
