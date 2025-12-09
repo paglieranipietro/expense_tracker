@@ -1,18 +1,88 @@
-# React + Vite
+# 💰 Gestionale Spese React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Gestionale Spese** è un'applicazione web moderna e reattiva per il tracciamento delle finanze personali. Sviluppata con **React** e **PocketBase**, offre un'esperienza utente fluida con design "premium", visualizzazione dati avanzata e gestione intuitiva delle transazioni.
 
-Currently, two official plugins are available:
+![Dashboard Preview](https://via.placeholder.com/1200x600?text=Dashboard+Gestionale+Spese+Preview)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Funzionalità Principali
 
-## React Compiler
+### 📊 Dashboard & Analisi
+-   **Totale in Tempo Reale**: Calcolo istantaneo del saldo basato sui filtri attivi.
+-   **Grafico Lineare Avanzato**:
+    -   *Modalità Giornaliera*: Visualizza trend su 7 o 30 giorni.
+    -   *Modalità Intraday*: Se filtrato per "Oggi", mostra l'andamento orario preciso.
+    -   *Punti Permanenti*: I data point sono sempre visibili per una facile lettura.
+-   **Grafico a Torta**: Distribuzione delle spese per categoria con colori dedicati.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### 📝 Gestione Transazioni
+-   **Inserimento Rapido**: Form ottimizzato su due righe.
+-   **Date Intelligenti**:
+    -   Default su "Adesso" all'apertura.
+    -   Supporto per inserimento data/ora specifica (`datetime-local`).
+    -   *Sticky Date*: La data rimane memorizzata se modificata manualmente, ideale per inserimenti in serie.
+-   **Categorizzazione**: Icone e colori automatici per categorie (Cibo, Trasporti, Casa, Svago, Altro).
+-   **Eliminazione**: Rimozione transazioni con conferma.
 
-Note: This will impact Vite dev & build performances.
+### 🎨 UI/UX Premium
+-   **Design Glassmorphism**: Effetti di trasparenza e blur.
+-   **Responsive**: Layout a griglia che si adatta a desktop e mobile.
+-   **Feedback Visivo**: Bordi colorati in base alla categoria della spesa.
 
-## Expanding the ESLint configuration
+## 🛠️ Stack Tecnologico
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+-   **Frontend**: [React](https://reactjs.org/) (Vite)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/) + CSS Modules
+-   **Grafici**: [Recharts](https://recharts.org/)
+-   **Backend**: [PocketBase](https://pocketbase.io/) (BaaS leggero e performante)
+-   **Icone**: [Lucide React](https://lucide.dev/)
+
+## 🚀 Guida all'Installazione
+
+### 1. Prerequisiti
+-   Node.js (v16 o superiore)
+-   PocketBase eseguibile
+
+### 2. Configurazione Backend (PocketBase)
+1.  Avvia PocketBase: `./pocketbase serve`
+2.  Accedi al pannello admin: `http://127.0.0.1:8090/_/`
+3.  Crea una Collection chiamata **`spese`**.
+4.  Aggiungi i seguenti campi (Schema):
+    -   `descrizione`: **Text**
+    -   `importo`: **Number**
+    -   `categoria`: **Text**
+    -   `data`: **Date/Time**
+5.  **API Rules**: Imposta le regole su "Public" (lascia vuoto il campo regole) per semplificare lo sviluppo locale.
+
+### 3. Avvio Frontend
+1.  Clona la repository:
+    ```bash
+    git clone https://github.com/TUO_USERNAME/gestionale-spese.git
+    cd gestionale-spese
+    ```
+2.  Installa le dipendenze:
+    ```bash
+    npm install
+    ```
+3.  Avvia il server di sviluppo:
+    ```bash
+    npm run dev
+    ```
+4.  Apri il browser su `http://localhost:5173`.
+
+## 🧠 Dettagli Tecnici
+
+### Gestione Date ISO 8601
+PocketBase utilizza UTC per le date. L'applicazione gestisce la conversione automaticamente:
+-   **Salvataggio**: La data locale viene convertita in ISO string (`toISOString()`) prima del POST.
+-   **Visualizzazione**: La data UTC ricevuta viene riconvertita nel formato locale (`toLocaleString('it-IT')`).
+
+### Logica dei Grafici
+Il componente graphico adatta l'asse X in base al filtro:
+-   **Filtro "Oggi"**: Nessuna aggregazione. Mostra ogni transazione sull'asse temporale (HH:mm).
+-   **Filtro "7/30 GG"**: Aggregazione per somma giornaliera (DD/MM).
+
+## � Licenza
+Progetto distribuito con licenza MIT. Sentiti libero di usarlo e modificarlo!
+
+---
+*Sviluppato con ❤️ e React.*
